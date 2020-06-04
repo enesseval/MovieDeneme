@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav_graph"
+    app:startDestination="@id/moviesFragment">
+
+    <fragment
+        android:id="@+id/moviesFragment"
+        android:name="com.enesseval.moviedeneme.view.MoviesFragment"
+        android:label="MoviesFragment" >
+        <action
+            android:id="@+id/action_moviesFragment_to_moviesDetailFragment"
+            app:destination="@id/moviesDetailFragment" />
+        <action
+            android:id="@+id/action_moviesFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/moviesDetailFragment"
+        android:name="com.enesseval.moviedeneme.view.MoviesDetailFragment"
+        android:label="MoviesDetailFragment" >
+        <action
+            android:id="@+id/action_moviesDetailFragment_to_moviesFragment"
+            app:destination="@id/moviesFragment" />
+        <action
+            android:id="@+id/action_moviesDetailFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <argument
+            android:name="movieId"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.enesseval.moviedeneme.view.ProfileFragment"
+        android:label="ProfileFragment" >
+        <action
+            android:id="@+id/action_profileFragment_to_moviesFragment"
+            app:destination="@id/moviesFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_moviesDetailFragment"
+            app:destination="@id/moviesDetailFragment" />
+    </fragment>
+</navigation>
